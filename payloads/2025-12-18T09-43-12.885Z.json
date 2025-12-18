@@ -1,0 +1,109 @@
+{
+  "_kind": "browser-payload",
+  "_savedAt": "2025-12-18T09:43:12.885Z",
+  "git": {
+    "owner": "Vannurajput",
+    "repo": "MuulRepo",
+    "branch": "main"
+  },
+  "printer_name": [
+    "EPSON TM-m30 Receipt"
+  ],
+  "item_length": 26,
+  "template": "2",
+  "data": [
+    {
+      "type": "logo",
+      "data": {
+        "url": "https://pos.tradywork.com/images/22bef43a88f72e2a0e57992865302ba4.png"
+      }
+    },
+    {
+      "type": "header",
+      "data": {
+        "top_title": "My Store Name",
+        "sub_titles": [
+          "Title 1",
+          "Title 2"
+        ],
+        "address": [
+          "#122 downtown"
+        ],
+        "bill_no": "13355",
+        "ticket_no": "10",
+        "date_of_bill": "3/3/2022",
+        "time": "11:32 AM",
+        "employee": "User 1",
+        "till": "Terminal 2",
+        "order_type": "Dine In"
+      }
+    },
+    {
+      "type": "item",
+      "data": {
+        "itemdata": [
+          {
+            "item_name": "Orchard Special 3 pizza",
+            "quantity": 1,
+            "price": 44.99,
+            "item_amount": 44.99
+          },
+          {
+            "item_name": "French fries",
+            "quantity": 1,
+            "price": 46.96,
+            "item_amount": 46.96
+          }
+        ]
+      }
+    },
+    {
+      "type": "summary",
+      "data": {
+        "summary": [
+          {
+            "key": "Subtotal",
+            "value": 91.95
+          }
+        ]
+      }
+    },
+    {
+      "type": "bigsummary",
+      "data": {
+        "bigsummary": [
+          {
+            "key": "Subtotal",
+            "value": 91.95
+          },
+          {
+            "key": "TaxTotal",
+            "value": 5.73
+          },
+          {
+            "key": "Total",
+            "value": 97.68
+          },
+          {
+            "key": "PaidAmount",
+            "value": 97.68
+          }
+        ]
+      }
+    },
+    {
+      "type": "footer",
+      "data": {
+        "align": "center",
+        "footer_text": [
+          "Hotsport development agency",
+          "350012, near dinning hall",
+          "Bookdev, Gujrat",
+          "BTN - 85823648",
+          "petorlrec@12gmail.com",
+          "Thank you for your visit!"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+:root{
+  --bg:#ffffff;
+  --border:#e0e0e0;
+  --shadow:0 8px 24px rgba(0,0,0,.14),0 2px 6px rgba(0,0,0,.06);
+  --text:#202124;
+  --muted:#5f6368;
+  --hover:#f1f3f4;
+  --sep:#e8eaed;
+  --icon-color:#5f6368;
+}
+
+/* dark theme — match the browser's dark blue-gray palette */
+[data-theme="dark"]{
+  --bg:#1b202b;
+  --border:rgba(90,105,140,0.35);
+  --shadow:0 8px 24px rgba(0,0,0,.45),0 2px 6px rgba(0,0,0,.25);
+  --text:#e5e7eb;
+  --muted:#a3aab8;
+  --hover:rgba(96,165,250,0.1);
+  --sep:rgba(90,105,140,0.3);
+  --icon-color:#a3aab8;
+}
+
+/* size-to-content & no scrollbars */
+html,body{
+  margin:0;
+  padding:0;
+  background:transparent;
+  font-family: var(--app-font, 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, system-ui, sans-serif);
+  -webkit-user-select:none;
+  width:max-content;
+  height:max-content;
+  overflow:hidden;
+  outline:none;
+}
+
+/* popup card */
+.tm-card{
+  display:flex;
+  flex-direction:column;
+  background:var(--bg);
+  border:1px solid var(--border);
+  border-radius:8px;
+  box-shadow:var(--shadow);
+  padding:4px 0;
+  min-width:240px;
+  max-width:300px;
+  overflow:hidden;
+  outline:none;
+}
+
+/* menu items — flex row: icon | label | shortcut */
+.tm-item{
+  appearance:none;
+  border:0;
+  background:transparent;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  text-align:left;
+  padding:7px 12px;
+  color:var(--text);
+  font-size:13px;
+  line-height:1.3;
+  cursor:pointer;
+  -webkit-app-region: no-drag;
+  outline:none;
+  white-space:nowrap;
+}
+.tm-item:hover{ background:var(--hover); }
+.tm-item:focus-visible{
+  background:var(--hover);
+  outline:2px solid #1a73e8;
+  outline-offset:-2px;
+}
+
+/* icons */
+.tm-icon{
+  width:16px;
+  height:16px;
+  flex-shrink:0;
+  color:var(--icon-color);
+  stroke:var(--icon-color);
+}
+
+/* label takes remaining space */
+.tm-label{
+  flex:1;
+}
+
+/* keyboard shortcut hint */
+.tm-shortcut{
+  font-size:12px;
+  color:var(--muted);
+  margin-left:24px;
+}
+
+/* separator between groups */
+.tm-sep{
+  height:1px;
+  margin:4px 0;
+  background:var(--sep);
+  flex-shrink:0;
+}
+
+/* safety: kill any scrollbars entirely */
+::-webkit-scrollbar{ width:0 !important; height:0 !important; background:transparent; }

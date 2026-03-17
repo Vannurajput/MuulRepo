@@ -1,0 +1,90 @@
+/**
+ * responsive.css
+ * Snap Layout responsive styles for Windows 11 window snapping.
+ * Classes are applied to <html> by snapLayout.js:
+ *   .snap-compact  — <640 px  (quarter screen)
+ *   .snap-narrow   — 640–1024 px (half screen)
+ *   .snap-medium   — 1024–1280 px (two-thirds)
+ *   .snap-full     — >1280 px (full / maximized)
+ *   .is-maximized  — window is maximized (needs edge padding fix)
+ */
+
+/* =================================================================
+   HALF SCREEN  (snap-narrow: 640–1024 px)
+   ================================================================= */
+
+html.snap-narrow .toolbar-right {
+  gap: 4px;
+}
+
+html.snap-narrow .toolbar-left {
+  gap: 6px;
+}
+
+html.snap-narrow .browser-toolbar {
+  gap: 6px;
+}
+
+html.snap-narrow .address-wrapper {
+  flex: 1 1 200px;
+  min-width: 120px;
+}
+
+html.snap-narrow #tabStrip .tab-wrapper {
+  max-width: 100px;
+}
+
+html.snap-narrow .drag-spacer:not(.overlay-spacer) {
+  flex: 0 0 6px;
+}
+
+/* =================================================================
+   QUARTER SCREEN  (snap-compact: <640 px)
+   ================================================================= */
+
+html.snap-compact .toolbar-right {
+  gap: 2px;
+  margin-left: 4px;
+}
+
+html.snap-compact .toolbar-left {
+  gap: 4px;
+}
+
+html.snap-compact .browser-toolbar {
+  gap: 4px;
+}
+
+html.snap-compact .address-wrapper {
+  flex: 1 1 100px;
+  min-width: 80px;
+  padding: 4px 8px;
+}
+
+html.snap-compact #tabStrip .tab-wrapper {
+  max-width: 72px;
+}
+
+html.snap-compact .header {
+  padding: 0 4px 4px;
+}
+
+html.snap-compact .drag-spacer:not(.overlay-spacer) {
+  flex: 0 0 4px;
+}
+
+html.snap-compact .nav-btn,
+html.snap-compact .nav-icon {
+  width: 26px;
+  height: 26px;
+}
+
+html.snap-compact .nav-icon.small {
+  width: 24px;
+  height: 24px;
+}
+
+/* Shrink the native overlay spacer at very narrow widths */
+html.snap-compact .overlay-spacer {
+  flex: 0 0 100px;
+}

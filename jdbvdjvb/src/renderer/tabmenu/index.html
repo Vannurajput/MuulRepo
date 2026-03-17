@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Tab Menu</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'">
+    <link rel="stylesheet" href="./styles.css" />
+    <script defer src="../assets/styles/fonts-loader.js"></script>
+  </head>
+  <body>
+    <div class="tm-card" role="menu" aria-label="Tab actions">
+
+      <!-- Group 1: New tab -->
+      <button class="tm-item" data-action="newTabRight" role="menuitem">
+        <svg class="tm-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        <span class="tm-label">New tab to the right</span>
+      </button>
+
+      <div class="tm-sep"></div>
+
+      <!-- Group 2: Page actions -->
+      <button class="tm-item" data-action="reload" role="menuitem">
+        <svg class="tm-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+        <span class="tm-label">Reload</span>
+        <span class="tm-shortcut">Ctrl+R</span>
+      </button>
+      <button class="tm-item" data-action="duplicate" role="menuitem">
+        <svg class="tm-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        <span class="tm-label">Duplicate</span>
+      </button>
+
+      <div class="tm-sep"></div>
+
+      <!-- Group 3: Tab management -->
+      <button class="tm-item" data-action="pin" role="menuitem">
+        <svg class="tm-icon tm-pin-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 L14.5 9 L21 9 L16 13.5 L18 21 L12 17 L6 21 L8 13.5 L3 9 L9.5 9 Z"/></svg>
+        <span class="tm-label">Pin tab</span>
+      </button>
+      <button class="tm-item" data-action="moveToWindow" role="menuitem">
+        <svg class="tm-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        <span class="tm-label">Move tab to new window</span>
+      </button>
+
+      <div class="tm-sep"></div>
+
+      <!-- Group 4: Close actions -->
+      <button class="tm-item" data-action="close" role="menuitem">
+        <svg class="tm-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        <span class="tm-label">Close</span>
+        <span class="tm-shortcut">Ctrl+W</span>
+      </button>
+      <button class="tm-item" data-action="closeOthers" role="menuitem">
+        <span class="tm-icon"></span>
+        <span class="tm-label">Close other tabs</span>
+      </button>
+      <button class="tm-item" data-action="closeRight" role="menuitem">
+        <span class="tm-icon"></span>
+        <span class="tm-label">Close tabs to the right</span>
+      </button>
+
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>

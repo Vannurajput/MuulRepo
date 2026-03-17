@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-skin="glass">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; style-src 'self' 'unsafe-inline';"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>License Keys</title>
+    <link rel="stylesheet" href="../assets/themes/light.css" />
+    <link rel="stylesheet" href="../assets/themes/dark.css" />
+    <link rel="stylesheet" href="../assets/skins/classic.css" />
+    <link rel="stylesheet" href="../assets/skins/glass.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="../assets/styles/fonts-loader.js"></script>
+  </head>
+  <body>
+    <div class="manager-shell">
+      <header class="manager-header">
+        <h1 class="manager-title">
+          <svg class="icon icon-lg" aria-hidden="true">
+            <use href="../assets/icons/mono.svg#diamond"></use>
+          </svg>
+          License Keys
+        </h1>
+        <p class="manager-subtitle">Add, edit, and manage your license keys.</p>
+      </header>
+      <section class="manager-body">
+        <div class="table-container">
+          <div class="table-toolbar">
+            <div class="header-left">
+              <button id="addKeyButton" class="add-config-btn" type="button">
+                <svg class="icon" aria-hidden="true">
+                  <use href="../assets/icons/mono.svg#plus"></use>
+                </svg>
+                <span>Add Key</span>
+              </button>
+            </div>
+            <label class="search-group" aria-label="Search keys">
+              <input id="searchBox" type="search" placeholder="Search keys" />
+              <svg class="icon" aria-hidden="true">
+                <use href="../assets/icons/mono.svg#search"></use>
+              </svg>
+            </label>
+          </div>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Key</th>
+                  <th>Date Added</th>
+                  <th class="col-actions">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="keyRows"></tbody>
+            </table>
+            <p id="statusMessage" class="status" aria-live="polite"></p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Add / Edit Key Modal -->
+    <div id="keyModal" class="modal" aria-hidden="true">
+      <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="keyModalTitle">
+        <header class="modal-header">
+          <div>
+            <p class="modal-eyebrow">License Key</p>
+            <h3 id="keyModalTitle">Add Key</h3>
+          </div>
+          <button id="keyModalClose" class="icon-btn ghost" aria-label="Close">
+            <svg class="icon" aria-hidden="true">
+              <use href="../assets/icons/mono.svg#close"></use>
+            </svg>
+          </button>
+        </header>
+        <form id="keyForm" class="modal-body">
+          <label class="field">
+            <span>License Key</span>
+            <input id="keyInput" type="text" name="key" placeholder="Enter license key..." autocomplete="off" required />
+          </label>
+          <div id="keyError" class="field-error" role="alert" aria-live="polite"></div>
+          <div class="modal-actions">
+            <button type="button" id="keyCancel" class="btn ghost">Cancel</button>
+            <button type="submit" id="keySave" class="btn primary">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script type="module" src="../theme/themeBootstrap.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

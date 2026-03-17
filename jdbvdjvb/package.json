@@ -1,22 +1,109 @@
 {
-  "name": "copy-of-json-test-page",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "name": "muulbrowser",
+  "version": "1.4.12",
+  "description": "A minimal Electron-based browser UI.",
+  "author": "Your Name",
+  "main": "src/main/main.js",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "tsc --noEmit",
-    "preview": "vite preview"
+    "dev": "electron .",
+    "start": "electron .",
+    "clean": "rimraf dist",
+    "postinstall": "electron-builder install-app-deps && node scripts/ensure-cpu-features-stub.js",
+    "ensure:cpu-stub": "node scripts/ensure-cpu-features-stub.js",
+    "build:win": "npm run ensure:cpu-stub && electron-builder --win",
+    "build:scheduler-service": "pkg service-runner/index.js --targets node16-win-x64 --output build/scheduler-service/MuulScheduler.exe",
+    "publish:win": "npm run ensure:cpu-stub && electron-builder --win --publish always",
+    "build:unpacked": "npm run ensure:cpu-stub && electron-builder --dir",
+    "test": "jest",
+    "test:coverage": "jest --coverage"
   },
   "dependencies": {
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "@aws-sdk/rds-signer": "^3.972.0",
+    "@fontsource/material-icons": "^5.2.7",
+    "@fontsource/roboto": "^5.2.9",
+    "adm-zip": "^0.5.16",
+    "cpu-features": "file:vendor/cpu-features-stub",
+    "cron-parser": "^4.9.0",
+    "electron-log": "^5.4.3",
+    "electron-updater": "^6.7.3",
+    "keytar": "^7.9.0",
+    "mongodb": "^6.10.0",
+    "mssql": "^12.2.0",
+    "mysql2": "^3.13.0",
+    "nan": "^2.19.0",
+    "pg": "^8.13.0",
+    "qrcode": "^1.5.4",
+    "sqlite3": "^5.1.7",
+    "ssh2": "^1.17.0",
+    "usb": "^2.17.0"
   },
   "devDependencies": {
-    "@types/node": "^22.14.0",
-    "@vitejs/plugin-react": "^5.0.0",
-    "typescript": "~5.8.2",
-    "vite": "^6.2.0"
+    "@babel/core": "^7.28.6",
+    "@babel/preset-env": "^7.28.6",
+    "babel-jest": "^30.2.0",
+    "buildcheck": "^0.0.7",
+    "electron": "^33.2.0",
+    "electron-builder": "^26.0.12",
+    "jest": "^30.2.0",
+    "pkg": "^5.8.0",
+    "rimraf": "^6.0.1"
+  },
+  "overrides": {
+    "cpu-features": "file:vendor/cpu-features-stub"
+  },
+  "build": {
+    "appId": "com.muulorigins.muulbrowser",
+    "productName": "MuulBrowser",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*",
+      "build/icon.ico",
+      "scheduler-service/**/*",
+      "package.json"
+    ],
+    "asarUnpack": [
+      "**/preload/**",
+      "**/*.node",
+      "scheduler-service/**"
+    ],
+    "extraResources": [
+      {
+        "from": "build/scheduler-service/MuulScheduler.exe",
+        "to": "scheduler-service/MuulScheduler.exe"
+      },
+      {
+        "from": "scheduler-service/nssm.exe",
+        "to": "scheduler-service/nssm.exe"
+      },
+      {
+        "from": "scheduler-service/installService.ps1",
+        "to": "scheduler-service/installService.ps1"
+      },
+      {
+        "from": "scheduler-service/uninstallService.ps1",
+        "to": "scheduler-service/uninstallService.ps1"
+      }
+    ],
+    "npmRebuild": true,
+    "icon": "build/icon.ico",
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "Vandanarajput",
+        "repo": "mobrowser-releases"
+      }
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "include": "build/installer.nsh",
+      "perMachine": true,
+      "allowElevation": true,
+      "oneClick": false
+    }
   }
 }

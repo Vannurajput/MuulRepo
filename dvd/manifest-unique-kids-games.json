@@ -1,0 +1,22 @@
+{
+  "short_name": "Unique Kids Games",
+  "name": "Unique Kids Games PWA: A Fun Game Collection",
+  "id": "com.google.dev.unique-kids-games-pwa",
+  "icons": [
+    {
+      "src": "icons/icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "icons/icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#e9e7ff",
+  "background_color": "#f7f5ff",
+  "description": "A fun collection of PWA games for kids."
+}

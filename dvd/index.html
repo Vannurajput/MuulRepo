@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <title>Kids Games PWA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="manifest" href="/manifest-unique-kids-games.json" />
+    <meta name="theme-color" content="#1e293b">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Kids Games">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+      @keyframes move-stars {
+        from { background-position: 0 0; }
+        to { background-position: -10000px 5000px; }
+      }
+      body {
+        font-family: 'Balsamiq Sans', cursive;
+        -webkit-tap-highlight-color: transparent;
+        color: #e2e8f0; /* slate-200 */
+        /* New "Starry Night" theme background */
+        background-color: #0f172a; /* slate-900 */
+        background-image: 
+          radial-gradient(1px 1px at 20px 30px, #e2e8f0, rgba(0,0,0,0)),
+          radial-gradient(1px 1px at 40px 70px, #e2e8f0, rgba(0,0,0,0)),
+          radial-gradient(1px 1px at 80px 120px, #e2e8f0, rgba(0,0,0,0)),
+          radial-gradient(2px 2px at 160px 240px, #e2e8f0, rgba(0,0,0,0)),
+          radial-gradient(1px 1px at 50% 50%, #ffffff, rgba(0,0,0,0)),
+          radial-gradient(2px 2px at 20% 70%, #ffffff, rgba(0,0,0,0)),
+          radial-gradient(3px 3px at 80% 20%, #ffffff, rgba(0,0,0,0));
+        background-repeat: repeat;
+        background-size: 300px 300px;
+        animation: move-stars 200s linear infinite;
+        min-height: 100vh;
+      }
+      .font-pixel {
+        font-family: 'Press Start 2P', cursive;
+      }
+      /* Custom scrollbar for the new dark theme */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #1e293b; /* slate-800 */
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #06b6d4; /* cyan-500 */
+        border-radius: 10px;
+        border: 2px solid #1e293b;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #0891b2; /* cyan-600 */
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.1.1/",
+    "react": "https://esm.sh/react@^19.1.1",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.1/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

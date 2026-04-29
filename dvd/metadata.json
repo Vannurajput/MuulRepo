@@ -1,6 +1,5 @@
 {
-  "name": "Copy of Kids Games PWA",
-  "description": "A fun collection of Progressive Web App (PWA) games for kids. Play offline with colorful graphics and playful animations.",
-  "requestFramePermissions": [],
-  "prompt": ""
+  "name": "Copy of JSON Test Page",
+  "description": "A simple, clean utility for testing and validating JSON input.",
+  "requestFramePermissions": []
 }
